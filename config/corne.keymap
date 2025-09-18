@@ -87,15 +87,23 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                 <&bt BT_SEL 0>,
+                <&bt BT_SEL 0>,
+                <&macro_wait_time 500>,
+                <&macro_tap_time 40>,
+                <&kp F20>;
+        };
 
-                 // 切替完了待ち
-                 <&macro_wait_time 500>,
+        bt1_and_notice: bt1_and_notice {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&bt BT_SEL 1>,
+                <&macro_wait_time 500>,
+                <&macro_tap_time 40>,
+                <&kp F20>;
 
-                 // タップ
-                 <&macro_tap_time 40>,
-                 <&kp F20>;
-         };
+            label = "BT1_AND_NOTICE";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -133,8 +141,8 @@
 
             bindings = <
 &trans  &trans        &trans        &trans        &trans        &trans          &browsertab   &browser_tab_back  &trans          &trans        &trans           &trans
-&trans  &trans        &trans        &trans        &trans        &trans          &trans        &kp LEFT_ARROW     &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &bt BT_SEL 1
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7       &kp NUMBER_8    &kp NUMBER_9  &kp NUMBER_0     &bt BT_SEL 0
+&trans  &trans        &trans        &trans        &trans        &trans          &trans        &kp LEFT_ARROW     &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &bt1_and_notice
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7       &kp NUMBER_8    &kp NUMBER_9  &kp NUMBER_0     &bt0_and_notice
                                     &trans        &trans        &trans          &trans        &trans             &trans
             >;
         };
