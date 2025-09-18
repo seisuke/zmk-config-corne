@@ -82,6 +82,20 @@
 
             label = "BROWSER_TAB_BACK";
         };
+
+        bt0_and_notice: bt0_and_notice {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                 <&bt BT_SEL 0>,
+
+                 // 切替完了待ち
+                 <&macro_wait_time 500>,
+
+                 // タップ
+                 <&macro_tap_time 40>,
+                 <&kp F20>;
+         };
     };
 
     combos { compatible = "zmk,combos"; };
