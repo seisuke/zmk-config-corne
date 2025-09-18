@@ -69,7 +69,7 @@
                 <&kp LCTRL>;
         };
 
-        browser_tab_back: browser_tab_back {
+        browsertab_back: browsertab_back {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -79,8 +79,6 @@
                 <&kp TAB>,
                 <&macro_release>,
                 <&kp LS(LCTRL)>;
-
-            label = "BROWSER_TAB_BACK";
         };
 
         bt0_and_notice: bt0_and_notice {
@@ -101,8 +99,6 @@
                 <&macro_wait_time 500>,
                 <&macro_tap_time 40>,
                 <&kp F20>;
-
-            label = "BT1_AND_NOTICE";
         };
     };
 
@@ -140,10 +136,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &trans        &trans        &trans        &trans        &trans          &browsertab   &browser_tab_back  &trans          &trans        &trans           &trans
-&trans  &trans        &trans        &trans        &trans        &trans          &trans        &kp LEFT_ARROW     &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &bt1_and_notice
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7       &kp NUMBER_8    &kp NUMBER_9  &kp NUMBER_0     &bt0_and_notice
-                                    &trans        &trans        &trans          &trans        &trans             &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &browsertab   &browsertab_back  &trans          &trans        &trans           &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans        &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &bt1_and_notice
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7      &kp NUMBER_8    &kp NUMBER_9  &kp NUMBER_0     &bt0_and_notice
+                                    &trans        &trans        &trans          &trans        &trans            &trans
             >;
         };
 
