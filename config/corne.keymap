@@ -102,7 +102,14 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        reset {
+            bindings = <&sys_reset>;
+            key-positions = <5 17 29>;
+        };
+    };
 
     //
 
@@ -136,10 +143,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &trans        &trans        &trans        &trans        &trans          &browsertab   &browsertab_back  &trans          &trans        &trans           &trans
-&trans  &trans        &trans        &trans        &trans        &trans          &trans        &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &bt1_and_notice
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7      &kp NUMBER_8    &kp NUMBER_9  &kp NUMBER_0     &bt0_and_notice
-                                    &trans        &trans        &trans          &trans        &trans            &trans
+&trans  &trans        &trans        &trans        &trans        &kp K_VOLUME_UP    &browsertab   &browsertab_back  &trans          &trans        &trans           &trans
+&trans  &trans        &trans        &trans        &trans        &trans             &trans        &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &bt1_and_notice
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5       &kp NUMBER_6  &kp NUMBER_7      &kp NUMBER_8    &kp NUMBER_9  &kp NUMBER_0     &bt0_and_notice
+                                    &trans        &trans        &trans             &trans        &trans            &trans
             >;
         };
 
@@ -163,10 +170,10 @@
         BT {
             display-name = "System";
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
-                                    &trans        &trans      &trans            &trans  &trans  &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7      &kp F8  &kp F9  &kp F10      &trans
+&trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans      &trans  &trans  &trans       &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &sys_reset  &trans            &trans  &sys_reset  &trans  &trans  &bootloader  &trans
+                                    &trans        &trans      &trans            &trans  &trans      &trans
             >;
         };
     };
